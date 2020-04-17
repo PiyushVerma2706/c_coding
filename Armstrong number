@@ -1,0 +1,36 @@
+// print all armstrong number up to a number n
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n,j,temp,p,rem,i,res,pow;
+clrscr();
+printf("enter the number till armstrong number to be printed\n");
+scanf("%d",&n);
+for(j=1;j<=n;j++)
+{
+temp=j;
+p=0;
+while(temp!=0)
+{
+temp=temp/10;
+p++;
+}
+temp=j;
+res=0;
+while(temp!=0)
+{
+rem=temp%10;
+pow=1;
+for(i=0;i<p;i++)
+{
+pow=pow*rem;
+}
+res=res+pow;
+temp=temp/10;
+}
+if(res==j)
+printf("%d,",j);
+}
+getch();
+}
